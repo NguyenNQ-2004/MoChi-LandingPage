@@ -42,8 +42,7 @@
         .hero { position: relative; display: grid; grid-template-columns: 42% 58%; aspect-ratio: 3702 / 1152; min-height: 315px; overflow: hidden; background: #eee2dc; }
         .hero-copy { position: relative; z-index: 1; align-self: center; padding: 24px 18px 24px 11%; }
         .hero-copy p { max-width: 330px; margin-bottom: 15px; color: #665b56; font-size: 13px; }
-        .hero-copy .hero-tagline { width: fit-content; margin: 3px 0 9px; padding-bottom: 8px; color: #d77aa9; font-family: "Segoe Script", "Brush Script MT", "URW Chancery L", cursive; font-size: clamp(21px, 2.1vw, 28px); font-style: italic; line-height: 1.2; }
-        .hero-copy .hero-tagline::after { display: block; width: 100%; height: 1px; margin-top: 8px; background: linear-gradient(90deg, #e49abd 0 45%, transparent 45% 55%, #e49abd 55% 100%); content: ""; }
+        .hero-copy .hero-tagline { margin: 3px 0 9px; color: #d77aa9; font-family: inherit; font-size: 16px; font-style: normal; line-height: 1.5; }
         .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
         /* Section 2 — bốn sản phẩm trên nền kem */
@@ -156,6 +155,7 @@
         .footer-grid { display: grid; grid-template-columns: 1.1fr 1.1fr .8fr; gap: 34px; align-items: start; max-width: 1100px; margin: 0 auto; }
         .footer-grid h3 { margin: 0 0 10px; color: #70464b; font-size: 13px; }
         .footer-grid p, .footer-grid a { color: #615c5c; font-size: 12px; }
+        .footer-grid a.button { color: #fff; }
         .footer-grid p { margin: 3px 0; }
         .footer-link { text-decoration: none; }
         .copyright { max-width: 1100px; margin: 12px auto 0; padding-top: 7px; border-top: 1px solid #e5ddda; color: #898180; font-size: 9px; text-align: center; }
@@ -342,7 +342,7 @@
                 </div>
             </div>
             <div class="email-band animated fadeInUp"><span>GET 20% OFF YOUR FIRST ORDER</span><form class="email-form" action="mailto:Mochi23@gmail.com" method="post" enctype="text/plain"><input type="email" name="Email" placeholder="Nhập email của bạn" aria-label="Email của bạn" required><button type="submit">Nhận ưu đãi</button></form></div>
-            <div class="countdown-band"><span>ƯU ĐÃI KẾT THÚC SAU</span><div class="countdown" aria-label="Thời gian còn lại của ưu đãi"><div class="time-box"><strong id="count-days">--</strong><span>Ngày</span></div><div class="time-box"><strong id="count-hours">--</strong><span>Giờ</span></div><div class="time-box"><strong id="count-minutes">--</strong><span>Phút</span></div><div class="time-box"><strong id="count-seconds">--</strong><span>Giây</span></div></div><p class="countdown-note" id="countdown-note" aria-live="polite">Đồng hồ chờ mốc thời gian kết thúc ưu đãi.</p></div>
+            <div class="countdown-band"><span>ƯU ĐÃI KẾT THÚC SAU</span><div class="countdown" aria-label="Thời gian còn lại của ưu đãi"><div class="time-box"><strong id="count-days">--</strong><span>Ngày</span></div><div class="time-box"><strong id="count-hours">--</strong><span>Giờ</span></div><div class="time-box"><strong id="count-minutes">--</strong><span>Phút</span></div><div class="time-box"><strong id="count-seconds">--</strong><span>Giây</span></div></div><p class="countdown-note" id="countdown-note" aria-live="polite">Ưu đãi có hiệu lực trong 2 giờ kể từ lần truy cập đầu tiên.</p></div>
         </div>
     </section>
 
@@ -359,8 +359,17 @@
     </footer>
 
     <script>
-        // Demo kết thúc cuối ngày thứ Ba 20/10/2026 theo giờ Việt Nam (UTC+7).
-        var countdownEndAt = new Date("2026-10-20T23:59:59+07:00").getTime();
+        // Mỗi khách truy cập có 2 giờ; lưu mốc kết thúc để không đặt lại khi tải lại trang.
+        var countdownStorageKey = "mochiOfferEndAtV2";
+        var countdownEndAt = Date.now() + 2 * 60 * 60 * 1000;
+        try {
+            var savedCountdownEndAt = Number(window.localStorage.getItem(countdownStorageKey));
+            if (savedCountdownEndAt > 0) {
+                countdownEndAt = savedCountdownEndAt;
+            } else {
+                window.localStorage.setItem(countdownStorageKey, String(countdownEndAt));
+            }
+        } catch (error) {}
         var countdownTimer;
         function updateCountdown() {
             var remaining = Math.max(0, countdownEndAt - Date.now());
@@ -372,7 +381,7 @@
                 window.clearInterval(countdownTimer);
                 document.getElementById("countdown-note").textContent = "Ưu đãi đã kết thúc.";
             } else {
-                document.getElementById("countdown-note").textContent = "Đếm ngược đến 23:59 ngày 20/10/2026.";
+                document.getElementById("countdown-note").textContent = "Ưu đãi có hiệu lực trong 2 giờ kể từ lần truy cập đầu tiên.";
             }
         }
         countdownTimer = window.setInterval(updateCountdown, 1000);
