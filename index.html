@@ -17,7 +17,7 @@
         .container { width: min(100% - 32px, 1100px); margin: 0 auto; }
         .section { padding: 26px 0; }
         .brand { display: inline-block; color: #713f24; font-family: "Palatino Linotype", Georgia, serif; font-size: clamp(54px, 6vw, 88px); font-weight: 400; line-height: .9; letter-spacing: .045em; text-decoration: none; text-transform: uppercase; }
-        .brand-small { font-size: 29px; }
+        .brand-small { font-size: clamp(38px, 3.3vw, 46px); letter-spacing: .055em; }
         .brand-subtitle { display: block; margin-top: 8px; color: #805b4e; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; font-size: clamp(21px, 2.1vw, 29px); font-weight: 400; }
         h1, h2, h3, p { margin-top: 0; }
         h1, h2, h3 { color: #765b52; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; font-weight: 400; letter-spacing: .015em; line-height: 1.24; }
@@ -42,7 +42,7 @@
         .hero { position: relative; display: grid; grid-template-columns: 42% 58%; aspect-ratio: 3702 / 1152; min-height: 315px; overflow: hidden; background: #eee2dc; }
         .hero-copy { position: relative; z-index: 1; align-self: center; padding: 24px 18px 24px 11%; }
         .hero-copy p { max-width: 330px; margin-bottom: 15px; color: #665b56; font-size: 13px; }
-        .hero-copy .hero-tagline { margin: 3px 0 9px; color: #d77aa9; font-family: inherit; font-size: 16px; font-style: normal; line-height: 1.5; }
+        .hero-copy .hero-tagline { margin: 3px 0 9px; color: #d77aa9; font-family: inherit; font-size: clamp(21px, 2.2vw, 26px); font-style: normal; line-height: 1.35; }
         .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
         /* Section 2 — bốn sản phẩm trên nền kem */
@@ -155,6 +155,7 @@
         .footer-grid { display: grid; grid-template-columns: 1.1fr 1.1fr .8fr; gap: 34px; align-items: start; max-width: 1100px; margin: 0 auto; }
         .footer-grid h3 { margin: 0 0 10px; color: #70464b; font-size: 13px; }
         .footer-grid p, .footer-grid a { color: #615c5c; font-size: 12px; }
+        .footer-grid a.brand-small { display: inline-block; margin-bottom: 8px; color: #713f24; font-size: clamp(40px, 4vw, 52px); line-height: .95; letter-spacing: .055em; }
         .footer-grid a.button { color: #fff; }
         .footer-grid p { margin: 3px 0; }
         .footer-link { text-decoration: none; }
@@ -299,10 +300,10 @@
                 <p class="section-kicker">MoChi trong trái tim nàng thơ</p>
             </div>
             <div class="review-grid">
-                <article class="review-card animated fadeInUp"><p class="review-quote">Đóng gói siêu chỉn chu, nhận hàng là mê luôn. Mình dùng đi học và đi cà phê đều đẹp, ai cũng hỏi mua ở đâu.</p><div class="reviewer"><img class="review-avatar" src="https://images.unsplash.com/photo-1589525231707-f2de2428f59c?auto=format&amp;fit=crop&amp;crop=faces&amp;w=128&amp;h=128&amp;q=78" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Minh Anh"><div class="reviewer-info"><p class="review-name">Trần Minh Anh</p><p class="review-age">25 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
-                <article class="review-card animated fadeInUp motion-delay-1"><p class="review-quote">Lần đầu mua nhưng rất bất ngờ vì chất lượng. Kẹp giữ tóc tốt, không bị tuột, phối với váy hay áo sơ mi đều rất xinh.</p><div class="reviewer"><img class="review-avatar" src="https://images.unsplash.com/photo-1670167872975-ae800bb00407?auto=format&amp;fit=crop&amp;crop=faces&amp;w=128&amp;h=128&amp;q=78" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Thu Uyên"><div class="reviewer-info"><p class="review-name">Hoàng Thu Uyên</p><p class="review-age">18 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
-                <article class="review-card animated fadeInUp motion-delay-2"><p class="review-quote">Thiết kế đẹp, chất liệu chắc chắn, kẹp giữ tóc tốt. Đóng gói cẩn thận, giao hàng nhanh. Sẽ tiếp tục ủng hộ MoChi!</p><div class="reviewer"><img class="review-avatar" src="https://images.unsplash.com/photo-1742402372285-da4752ec3533?auto=format&amp;fit=crop&amp;crop=faces&amp;w=128&amp;h=128&amp;q=78" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Hoàng Anh"><div class="reviewer-info"><p class="review-name">Lê Hoàng Anh</p><p class="review-age">19 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
-                <article class="review-card animated fadeInUp motion-delay-3"><p class="review-quote">Kẹp ôm tóc tốt, không bị đau da đầu, mẫu pastel cực kỳ nữ tính. Đóng gói cẩn thận, giao hàng nhanh.</p><div class="reviewer"><img class="review-avatar" src="https://images.unsplash.com/photo-1668049221529-338ee96a5080?auto=format&amp;fit=crop&amp;crop=faces&amp;w=128&amp;h=128&amp;q=78" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng My Anh"><div class="reviewer-info"><p class="review-name">Hà My Anh</p><p class="review-age">22 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
+                <article class="review-card animated fadeInUp"><p class="review-quote">Đóng gói siêu chỉn chu, nhận hàng là mê luôn. Mình dùng đi học và đi cà phê đều đẹp, ai cũng hỏi mua ở đâu.</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-1.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Minh Anh"><div class="reviewer-info"><p class="review-name">Trần Minh Anh</p><p class="review-age">25 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
+                <article class="review-card animated fadeInUp motion-delay-1"><p class="review-quote">Lần đầu mua nhưng rất bất ngờ vì chất lượng. Kẹp giữ tóc tốt, không bị tuột, phối với váy hay áo sơ mi đều rất xinh.</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-2.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Thu Uyên"><div class="reviewer-info"><p class="review-name">Hoàng Thu Uyên</p><p class="review-age">18 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
+                <article class="review-card animated fadeInUp motion-delay-2"><p class="review-quote">Thiết kế đẹp, chất liệu chắc chắn, kẹp giữ tóc tốt. Đóng gói cẩn thận, giao hàng nhanh. Sẽ tiếp tục ủng hộ MoChi!</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-3.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Hoàng Anh"><div class="reviewer-info"><p class="review-name">Lê Hoàng Anh</p><p class="review-age">19 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
+                <article class="review-card animated fadeInUp motion-delay-3"><p class="review-quote">Kẹp ôm tóc tốt, không bị đau da đầu, mẫu pastel cực kỳ nữ tính. Đóng gói cẩn thận, giao hàng nhanh.</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-4.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng My Anh"><div class="reviewer-info"><p class="review-name">Hà My Anh</p><p class="review-age">22 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
             </div>
             <div class="review-cta"><a class="button" href="#section-7">MUA HÀNG VÀ TRẢI NGHIỆM NGAY</a></div>
         </div>
