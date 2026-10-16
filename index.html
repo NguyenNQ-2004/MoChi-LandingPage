@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff5f1">
     <title>MoChi Shop — Tô điểm nàng theo cách riêng</title>
+    <link rel="preload" as="image" href="images/optimized/banner.jpg" fetchpriority="high">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <style>
         * { box-sizing: border-box; }
@@ -45,7 +46,7 @@
         .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
         /* Section 2 — bốn sản phẩm trên nền kem */
-        #section-2 { display: flex; align-items: center; aspect-ratio: 3236 / 1280; min-height: 420px; padding: 25px 0 30px; background: #fff7f1 url("https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/sesstion2.png") center / cover no-repeat; }
+        #section-2 { display: flex; align-items: center; aspect-ratio: 3236 / 1280; min-height: 420px; padding: 25px 0 30px; background: #fff7f1 url("images/optimized/sesstion2.jpg") center / cover no-repeat; }
         #section-2 .container { width: 100%; max-width: none; margin: 0; }
         .section-heading { margin: 0 auto 22px; text-align: center; }
         .section-kicker { margin: 0 0 2px; color: #d77aa9; font-family: inherit; font-size: 19px; font-style: italic; }
@@ -74,7 +75,7 @@
 
         /* Section 4 — bốn điểm nổi bật */
         #section-4 { padding: 0; background: #fff; }
-        .reason-section { width: 100%; max-width: none; min-height: 600px; padding: 22px max(4%, calc((100% - 1420px) / 2)) 28px; background: #fff8f1 url("https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/session4.png") center / cover no-repeat; }
+        .reason-section { width: 100%; max-width: none; min-height: 600px; padding: 22px max(4%, calc((100% - 1420px) / 2)) 28px; background: #fff8f1 url("images/optimized/session4.jpg") center / cover no-repeat; }
         .reason-heading { padding-top: 0; }
         .reason-heading h2 { margin-bottom: 4px; color: #d4429b; font-family: inherit; font-size: 22px; font-weight: 700; }
         .reason-subtitle { margin: 0 0 8px; color: #62534a; font-family: inherit; font-size: 16px; letter-spacing: 2px; }
@@ -88,7 +89,7 @@
 
         /* Section 5 — dải cảm nhận và thẻ vàng */
         #section-5 { padding: 0; background: #fffaf8; }
-        .review-wrap { width: 100%; max-width: none; min-height: 390px; padding: 20px 16px 16px; background: #fff8f7 url("https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/sesstion5.png") center / cover no-repeat; }
+        .review-wrap { width: 100%; max-width: none; min-height: 390px; padding: 20px 16px 16px; background: #fff8f7 url("images/optimized/sesstion5.jpg") center / cover no-repeat; }
         .review-title { margin-bottom: 3px; color: #cf5599; font-family: inherit; font-size: 21px; font-weight: 700; }
         .review-wrap .section-heading { margin-bottom: 10px; }
         .review-wrap .section-kicker { color: #8b6e66; font-size: 16px; font-style: normal; }
@@ -104,7 +105,7 @@
         .review-cta { margin-top: 10px; text-align: center; }
 
         /* Section 6 — năm chính sách hồng */
-        #section-6 { padding: 24px 0 28px; background: #fff4ef url("https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/sesstion6.png") center / cover no-repeat; }
+        #section-6 { padding: 24px 0 28px; background: #fff4ef url("images/optimized/sesstion6.jpg") center / cover no-repeat; }
         #section-6 .container { width: min(100% - 32px, 1240px); }
         .policy-title { margin-bottom: 0; font-family: inherit; font-size: 21px; font-weight: 700; }
         .policy-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; width: 100%; max-width: none; margin: 18px auto 0; }
@@ -117,7 +118,7 @@
         /* Section 7 — đặt hàng, đồng hồ và email ưu đãi */
         #section-7 { padding: 42px 0; background: #fff8f6; }
         #section-7 .container { width: 100%; max-width: none; margin: 0; }
-        .order-scene { display: grid; aspect-ratio: 2.65 / 1; min-height: 310px; padding: 22px; border: 0; background: #f6e6d7 url("https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/sestion7.png") center / cover no-repeat; place-items: center; }
+        .order-scene { display: grid; aspect-ratio: 2.65 / 1; min-height: 310px; padding: 22px; border: 0; background: #f6e6d7 url("images/optimized/sestion7.jpg") center / cover no-repeat; place-items: center; }
         .order-box { width: min(46%, 520px); margin: 0 4% 0 auto; padding: 24px; border: 1px solid rgba(255,255,255,.8); border-radius: 16px; background: rgba(255,255,255,.88); box-shadow: 0 10px 28px rgba(89, 63, 47, .16); text-align: center; }
         .order-flower { display: none; }
         .order-kicker { margin-bottom: 5px; color: #bd6d87; font-family: inherit; font-size: 16px; font-style: italic; }
@@ -150,7 +151,7 @@
         }
 
         /* Section 8 — chân trang gọn như mẫu */
-        #section-8 { padding: 18px 0 12px; border-top: 1px solid #e9a7c8; background: #fffdfa url("https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/sestion8.png") center / cover no-repeat; }
+        #section-8 { padding: 18px 0 12px; border-top: 1px solid #e9a7c8; background: #fffdfa url("images/optimized/sestion8.jpg") center / cover no-repeat; }
         .footer-grid { display: grid; grid-template-columns: 1.1fr 1.1fr .8fr; gap: 34px; align-items: start; max-width: 1100px; margin: 0 auto; }
         .footer-grid h3 { margin: 0 0 10px; color: #70464b; font-size: 13px; }
         .footer-grid p, .footer-grid a { color: #615c5c; font-size: 12px; }
@@ -235,7 +236,7 @@
                 <p>Phụ kiện tóc dành cho những cô gái yêu sự nhẹ nhàng, tinh tế và luôn muốn outfit đẹp hơn chỉ bằng một chi tiết nhỏ.</p>
                 <a class="button" href="#section-7">ĐẶT MUA NGAY</a>
             </div>
-            <img class="hero-image" src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/banner.png" width="3702" height="1152" alt="Nàng thơ MoChi với phụ kiện tóc">
+            <img class="hero-image" src="images/optimized/banner.jpg" width="3702" height="1152" fetchpriority="high" decoding="async" alt="Nàng thơ MoChi với phụ kiện tóc">
         </div>
     </header>
 
@@ -248,10 +249,10 @@
                 <p>Những mẫu kẹp được thiết kế để tôn lên vẻ đẹp tự nhiên và phong cách riêng của bạn.</p>
             </div>
             <div class="product-grid">
-                <article class="product-card"><img class="product-image" src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/1.png" width="2048" height="2048" loading="lazy" alt="Kẹp tóc nơ hồng MoChi"><div class="product-copy"><h3>Kẹp nơ MoChi</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm kẹp nơ">♡</a></div></div></article>
-                <article class="product-card"><img class="product-image" src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/2.png" width="2048" height="2048" loading="lazy" alt="Kẹp hoa hồng MoChi"><div class="product-copy"><h3>Hoa hồng dịu dàng</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa hồng">♡</a></div></div></article>
-                <article class="product-card"><img class="product-image" src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/3.png" width="2048" height="2048" loading="lazy" alt="Kẹp hoa biển xanh MoChi"><div class="product-copy"><h3>Hoa biển xanh</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa biển">♡</a></div></div></article>
-                <article class="product-card"><img class="product-image" src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/4.png" width="2048" height="2048" loading="lazy" alt="Kẹp càng cua MoChi màu nâu"><div class="product-copy"><h3>Kẹp càng cua MoChi</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn kẹp càng cua">♡</a></div></div></article>
+                <article class="product-card"><img class="product-image" src="images/optimized/1.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp tóc nơ hồng MoChi"><div class="product-copy"><h3>Kẹp nơ MoChi</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm kẹp nơ">♡</a></div></div></article>
+                <article class="product-card"><img class="product-image" src="images/optimized/2.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp hoa hồng MoChi"><div class="product-copy"><h3>Hoa hồng dịu dàng</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa hồng">♡</a></div></div></article>
+                <article class="product-card"><img class="product-image" src="images/optimized/3.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp hoa biển xanh MoChi"><div class="product-copy"><h3>Hoa biển xanh</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa biển">♡</a></div></div></article>
+                <article class="product-card"><img class="product-image" src="images/optimized/4.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp càng cua MoChi màu nâu"><div class="product-copy"><h3>Kẹp càng cua MoChi</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn kẹp càng cua">♡</a></div></div></article>
             </div>
         </div>
     </section>
@@ -259,7 +260,7 @@
     <!-- SECTION 3: CÂU CHUYỆN THƯƠNG HIỆU -->
     <section id="section-3" class="section">
         <div class="container story">
-            <img class="story-image" src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/sesstion3.png" width="3412" height="1216" loading="lazy" alt="Phụ kiện tóc MoChi trên nền hoa và lá cọ">
+            <img class="story-image" src="images/optimized/sesstion3.jpg" width="3412" height="1216" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trên nền hoa và lá cọ">
             <div class="story-copy">
                 <p class="story-kicker">HÀNH TRÌNH TẠO NÊN</p>
                 <h2>TÔN VINH NÉT ĐẸP BẢN SẮC TỪ MÁI TÓC</h2>
@@ -280,10 +281,10 @@
                 <p>Điều khiến MoChi trở thành chiếc kẹp bạn muốn dùng mỗi ngày.</p>
             </div>
             <div class="reason-grid">
-                <article class="reason-card animated fadeInUp"><img src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/5.png" width="2048" height="2048" loading="lazy" alt="Phụ kiện tóc MoChi trong ảnh 5"><h3>Thiết kế chuẩn Hàn Quốc</h3><p>Nhẹ nhàng, nữ tính và dễ phối với mọi outfit.</p></article>
-                <article class="reason-card animated fadeInUp motion-delay-1"><img src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/6.png" width="2048" height="2048" loading="lazy" alt="Phụ kiện tóc MoChi trong ảnh 6"><h3>Nâng tầm phong cách</h3><p>Chỉ một chiếc kẹp nhỏ cũng đủ tạo điểm nhấn tinh tế.</p></article>
-                <article class="reason-card animated fadeInUp motion-delay-2"><img src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/7.png" width="2048" height="2048" loading="lazy" alt="Phụ kiện tóc MoChi trong ảnh 7"><h3>Giữ tóc chắc chắn</h3><p>Chống trượt, không đau tóc, thoải mái cả ngày.</p></article>
-                <article class="reason-card animated fadeInUp motion-delay-3"><img src="https://raw.githubusercontent.com/NguyenNQ-2004/MoChi-LandingPage/main/images/8.png" width="2048" height="2048" loading="lazy" alt="Phụ kiện tóc MoChi trong ảnh 8"><h3>Chất liệu cao cấp</h3><p>Bền đẹp, hoàn thiện tỉ mỉ trong từng chi tiết.</p></article>
+                <article class="reason-card animated fadeInUp"><img src="images/optimized/5.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 5"><h3>Thiết kế chuẩn Hàn Quốc</h3><p>Nhẹ nhàng, nữ tính và dễ phối với mọi outfit.</p></article>
+                <article class="reason-card animated fadeInUp motion-delay-1"><img src="images/optimized/6.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 6"><h3>Nâng tầm phong cách</h3><p>Chỉ một chiếc kẹp nhỏ cũng đủ tạo điểm nhấn tinh tế.</p></article>
+                <article class="reason-card animated fadeInUp motion-delay-2"><img src="images/optimized/7.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 7"><h3>Giữ tóc chắc chắn</h3><p>Chống trượt, không đau tóc, thoải mái cả ngày.</p></article>
+                <article class="reason-card animated fadeInUp motion-delay-3"><img src="images/optimized/8.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 8"><h3>Chất liệu cao cấp</h3><p>Bền đẹp, hoàn thiện tỉ mỉ trong từng chi tiết.</p></article>
             </div>
             <div class="reason-button"><a class="button" href="#section-7">ĐẶT MUA NGAY</a></div>
         </div>
