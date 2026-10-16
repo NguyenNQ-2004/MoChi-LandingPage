@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,227 +8,1528 @@
     <title>MoChi Shop — Tô điểm nàng theo cách riêng</title>
     <link rel="preload" as="image" href="images/optimized/banner.jpg" fetchpriority="high">
     <style>
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { margin: 0; background: #fff; color: #6c5a57; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; font-weight: 400; line-height: 1.65; letter-spacing: .01em; }
-        button, input, select, textarea { font-family: inherit; }
-        img { display: block; max-width: 100%; height: auto; }
-        a { color: inherit; }
-        .container { width: min(100% - 32px, 1100px); margin: 0 auto; }
-        .section { padding: 26px 0; }
-        .brand { display: inline-block; color: #713f24; font-family: "Palatino Linotype", Georgia, serif; font-size: clamp(54px, 6vw, 88px); font-weight: 400; line-height: .9; letter-spacing: .045em; text-decoration: none; text-transform: uppercase; }
-        .brand-small { font-size: clamp(38px, 3.3vw, 46px); letter-spacing: .055em; }
-        .brand-subtitle { display: block; margin-top: 8px; color: #805b4e; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; font-size: clamp(21px, 2.1vw, 29px); font-weight: 400; }
-        h1, h2, h3, p { margin-top: 0; }
-        h1, h2, h3 { color: #765b52; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; font-weight: 400; letter-spacing: .015em; line-height: 1.24; }
-        h1 { margin-bottom: 4px; color: #824626; font-size: 28px; }
-        h2 { margin-bottom: 9px; color: #685047; font-size: 26px; }
-        .pink { color: #d3479d; }
-        .button { display: inline-block; padding: 9px 22px; border: 0; border-radius: 22px; background: #d4429b; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .025em; text-align: center; text-decoration: none; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: #6c5a57;
+            font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+            font-weight: 400;
+            line-height: 1.65;
+            letter-spacing: .01em;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(100% - 32px, 1100px);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 26px 0;
+        }
+
+        .brand {
+            display: inline-block;
+            color: #713f24;
+            font-family: "Palatino Linotype", Georgia, serif;
+            font-size: clamp(54px, 6vw, 88px);
+            font-weight: 400;
+            line-height: .9;
+            letter-spacing: .045em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .brand-small {
+            font-size: clamp(38px, 3.3vw, 46px);
+            letter-spacing: .055em;
+        }
+
+        .brand-subtitle {
+            display: block;
+            margin-top: 8px;
+            color: #805b4e;
+            font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+            font-size: clamp(21px, 2.1vw, 29px);
+            font-weight: 400;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #765b52;
+            font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+            font-weight: 400;
+            letter-spacing: .015em;
+            line-height: 1.24;
+        }
+
+        h1 {
+            margin-bottom: 4px;
+            color: #824626;
+            font-size: 28px;
+        }
+
+        h2 {
+            margin-bottom: 9px;
+            color: #685047;
+            font-size: 26px;
+        }
+
+        .pink {
+            color: #d3479d;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 9px 22px;
+            border: 0;
+            border-radius: 22px;
+            background: #d4429b;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .025em;
+            text-align: center;
+            text-decoration: none;
+        }
 
         /* Thanh điều hướng đầu trang */
-        .site-nav { position: relative; z-index: 5; display: flex; align-items: center; justify-content: center; gap: clamp(14px, 2.4vw, 38px); min-height: 58px; padding: 8px 4%; border-bottom: 1px solid #f1e4e8; background: rgba(255,255,255,.97); }
-        .nav-brand { color: #824626; font-family: "Palatino Linotype", Georgia, serif; font-size: 22px; font-weight: 400; text-decoration: none; }
-        .nav-links { display: flex; align-items: center; justify-content: center; gap: clamp(12px, 2vw, 30px); margin: 0; padding: 0; list-style: none; }
-        .nav-links a { color: #665653; font-size: 13px; font-weight: 500; letter-spacing: .015em; text-decoration: none; transition: color .2s ease; }
-        .nav-links a:hover { color: #d4429b; }
-        .nav-offer { display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border: 1px solid #f0c5dc; border-radius: 18px; color: #a34378; font-size: 11px; text-decoration: none; white-space: nowrap; }
-        .nav-offer strong { padding: 3px 8px; border-radius: 12px; background: #d4429b; color: white; font-weight: 500; }
-        .nav-cta { padding: 9px 18px; border-radius: 20px; background: #d4429b; color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .02em; text-decoration: none; white-space: nowrap; }
+        .site-nav {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(14px, 2.4vw, 38px);
+            min-height: 58px;
+            padding: 8px 4%;
+            border-bottom: 1px solid #f1e4e8;
+            background: rgba(255, 255, 255, .97);
+        }
+
+        .nav-brand {
+            color: #824626;
+            font-family: "Palatino Linotype", Georgia, serif;
+            font-size: 22px;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(12px, 2vw, 30px);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #665653;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: .015em;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4429b;
+        }
+
+        .nav-offer {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 10px;
+            border: 1px solid #f0c5dc;
+            border-radius: 18px;
+            color: #a34378;
+            font-size: 11px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav-offer strong {
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: #d4429b;
+            color: white;
+            font-weight: 500;
+        }
+
+        .nav-cta {
+            padding: 9px 18px;
+            border-radius: 20px;
+            background: #d4429b;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .02em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
 
         /* Section 1 — banner ngang, logo và nút mua */
-        #section-1 { padding: 0; background: #fff; }
-        #section-1 .container { width: 100%; max-width: none; margin: 0; }
-        .hero { position: relative; display: grid; grid-template-columns: 42% 58%; aspect-ratio: 3702 / 1152; min-height: 315px; overflow: hidden; background: #eee2dc; }
-        .hero-copy { position: relative; z-index: 1; align-self: center; padding: 24px 18px 24px 11%; }
-        .hero-copy p { max-width: 330px; margin-bottom: 15px; color: #665b56; font-size: 13px; }
-        .hero-copy .hero-tagline { margin: 3px 0 9px; color: #d77aa9; font-family: inherit; font-size: clamp(21px, 2.2vw, 26px); font-style: normal; line-height: 1.35; }
-        .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        #section-1 {
+            padding: 0;
+            background: #fff;
+        }
+
+        #section-1 .container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+        }
+
+        .hero {
+            position: relative;
+            display: grid;
+            grid-template-columns: 42% 58%;
+            aspect-ratio: 3702 / 1152;
+            min-height: 315px;
+            overflow: hidden;
+            background: #eee2dc;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            align-self: center;
+            padding: 24px 18px 24px 11%;
+        }
+
+        .hero-copy p {
+            max-width: 330px;
+            margin-bottom: 15px;
+            color: #665b56;
+            font-size: 13px;
+        }
+
+        .hero-copy .hero-tagline {
+            margin: 3px 0 9px;
+            color: #d77aa9;
+            font-family: inherit;
+            font-size: clamp(21px, 2.2vw, 26px);
+            font-style: normal;
+            line-height: 1.35;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
         /* Section 2 — bốn sản phẩm trên nền kem */
-        #section-2 { display: flex; align-items: center; aspect-ratio: 3236 / 1280; min-height: 420px; padding: 25px 0 30px; background: #fff7f1 url("images/optimized/sesstion2.jpg") center / cover no-repeat; }
-        #section-2 .container { width: 100%; max-width: none; margin: 0; }
-        .section-heading { margin: 0 auto 22px; text-align: center; }
-        .section-kicker { margin: 0 0 2px; color: #d77aa9; font-family: inherit; font-size: 19px; font-style: italic; }
-        #section-2 .section-kicker { font-size: 30px; font-weight: 600; line-height: 1.2; }
-        .section-heading h2 { margin-bottom: 4px; }
-        .section-heading p:last-child { margin-bottom: 0; color: #6c6461; font-size: 14px; }
-        .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; width: min(92%, 1450px); max-width: none; margin: 0 auto; }
-        .product-card { min-width: 0; padding: 9px; border: 1px solid #f4e8e3; border-radius: 17px; background: rgba(255,255,255,.78); }
-        .product-image { width: 100%; aspect-ratio: 1 / 1; border-radius: 11px; object-fit: cover; }
-        .product-copy { padding: 8px 3px 0; text-align: center; }
-        .product-copy h3 { min-height: 34px; margin-bottom: 2px; color: #715b4e; font-family: inherit; font-size: 14px; font-weight: 400; }
-        .product-price { margin-bottom: 7px; color: #766761; font-size: 14px; }
-        .product-actions { display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .product-button { min-width: 122px; padding: 7px 18px; border: 1px solid #d989b6; border-radius: 20px; background: #fff; color: #c45b94; font-size: 12px; font-weight: 600; letter-spacing: .02em; text-decoration: none; text-align: center; }
-        .heart { color: #947f70; font-size: 22px; line-height: 1; text-decoration: none; }
+        #section-2 {
+            display: flex;
+            align-items: center;
+            aspect-ratio: 3236 / 1280;
+            min-height: 420px;
+            padding: 25px 0 30px;
+            background: #fff7f1 url("images/optimized/sesstion2.jpg") center / cover no-repeat;
+        }
+
+        #section-2 .container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+        }
+
+        .section-heading {
+            margin: 0 auto 22px;
+            text-align: center;
+        }
+
+        .section-kicker {
+            margin: 0 0 2px;
+            color: #d77aa9;
+            font-family: inherit;
+            font-size: 19px;
+            font-style: italic;
+        }
+
+        #section-2 .section-kicker {
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 4px;
+        }
+
+        .section-heading p:last-child {
+            margin-bottom: 0;
+            color: #6c6461;
+            font-size: 14px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            width: min(92%, 1450px);
+            max-width: none;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            min-width: 0;
+            padding: 9px;
+            border: 1px solid #f4e8e3;
+            border-radius: 17px;
+            background: rgba(255, 255, 255, .78);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 11px;
+            object-fit: cover;
+        }
+
+        .product-copy {
+            padding: 8px 3px 0;
+            text-align: center;
+        }
+
+        .product-copy h3 {
+            min-height: 34px;
+            margin-bottom: 2px;
+            color: #715b4e;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .product-price {
+            margin-bottom: 7px;
+            color: #766761;
+            font-size: 14px;
+        }
+
+        .product-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .product-button {
+            min-width: 122px;
+            padding: 7px 18px;
+            border: 1px solid #d989b6;
+            border-radius: 20px;
+            background: #fff;
+            color: #c45b94;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .02em;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .heart {
+            color: #947f70;
+            font-size: 22px;
+            line-height: 1;
+            text-decoration: none;
+        }
 
         /* Section 3 — câu chuyện thương hiệu */
-        #section-3 { padding: 0; background: #fff; }
-        #section-3 .container { width: 100%; max-width: none; margin: 0; }
-        .story { position: relative; display: grid; grid-template-columns: 34% 66%; align-items: center; aspect-ratio: 3412 / 1216; min-height: 370px; overflow: hidden; background: #fff4ef; }
-        .story-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-        .story-copy { position: relative; z-index: 1; grid-column: 2; padding: 26px 6% 26px 20px; }
-        .story-kicker { margin-bottom: 4px; color: #77716f; font-size: 14px; letter-spacing: 3px; }
-        .story-copy h2 { margin-bottom: 12px; color: #d4429b; font-family: inherit; font-size: 23px; font-weight: 400; }
-        .story-copy p { margin-bottom: 11px; color: #655e5b; font-size: 12px; }
-        .story-copy .button { margin-top: 1px; }
+        #section-3 {
+            padding: 0;
+            background: #fff;
+        }
+
+        #section-3 .container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+        }
+
+        .story {
+            position: relative;
+            display: grid;
+            grid-template-columns: 34% 66%;
+            align-items: center;
+            aspect-ratio: 3412 / 1216;
+            min-height: 370px;
+            overflow: hidden;
+            background: #fff4ef;
+        }
+
+        .story-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .story-copy {
+            position: relative;
+            z-index: 1;
+            grid-column: 2;
+            padding: 26px 6% 26px 20px;
+        }
+
+        .story-kicker {
+            margin-bottom: 4px;
+            color: #77716f;
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+
+        .story-copy h2 {
+            margin-bottom: 12px;
+            color: #d4429b;
+            font-family: inherit;
+            font-size: 23px;
+            font-weight: 400;
+        }
+
+        .story-copy p {
+            margin-bottom: 11px;
+            color: #655e5b;
+            font-size: 12px;
+        }
+
+        .story-copy .button {
+            margin-top: 1px;
+        }
 
         /* Section 4 — bốn điểm nổi bật */
-        #section-4 { padding: 0; background: #fff; }
-        .reason-section { width: 100%; max-width: none; min-height: 600px; padding: 22px max(4%, calc((100% - 1420px) / 2)) 28px; background: #fff8f1 url("images/optimized/session4.jpg") center / cover no-repeat; }
-        .reason-heading { padding-top: 0; }
-        .reason-heading h2 { margin-bottom: 4px; color: #d4429b; font-family: inherit; font-size: 22px; font-weight: 400; }
-        .reason-subtitle { margin: 0 0 8px; color: #76645d; font-family: inherit; font-size: 16px; letter-spacing: 1.4px; }
-        .reason-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: clamp(18px, 3vw, 48px); padding: 12px 2% 5px; }
-        .reason-card { padding: 10px; border: 1px solid #f0e3cf; border-radius: 15px; background: rgba(255,253,248,.92); box-shadow: 0 8px 18px rgba(105,76,56,.10); text-align: center; }
-        .reason-card:nth-child(even) { margin-top: 42px; }
-        .reason-card img { width: 100%; aspect-ratio: 4 / 3; margin-bottom: 8px; border-radius: 9px; object-fit: cover; }
-        .reason-card h3 { margin-bottom: 5px; color: #665653; font-size: 15px; }
-        .reason-card p { min-height: 38px; margin-bottom: 2px; color: #77706b; font-size: 13px; }
-        .reason-button { margin: 13px 0 0; text-align: center; }
+        #section-4 {
+            padding: 0;
+            background: #fff;
+        }
+
+        .reason-section {
+            width: 100%;
+            max-width: none;
+            min-height: 600px;
+            padding: 22px max(4%, calc((100% - 1420px) / 2)) 28px;
+            background: #fff8f1 url("images/optimized/session4.jpg") center / cover no-repeat;
+        }
+
+        .reason-heading {
+            padding-top: 0;
+        }
+
+        .reason-heading h2 {
+            margin-bottom: 4px;
+            color: #d4429b;
+            font-family: inherit;
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        .reason-subtitle {
+            margin: 0 0 8px;
+            color: #76645d;
+            font-family: inherit;
+            font-size: 16px;
+            letter-spacing: 1.4px;
+        }
+
+        .reason-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: center;
+            gap: clamp(18px, 3vw, 48px);
+            padding: 12px 2% 5px;
+        }
+
+        .reason-card {
+            padding: 10px;
+            border: 1px solid #f0e3cf;
+            border-radius: 15px;
+            background: rgba(255, 253, 248, .92);
+            box-shadow: 0 8px 18px rgba(105, 76, 56, .10);
+            text-align: center;
+        }
+
+        .reason-card:nth-child(even) {
+            margin-top: 42px;
+        }
+
+        .reason-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            margin-bottom: 8px;
+            border-radius: 9px;
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .reason-card h3 {
+            margin-bottom: 5px;
+            color: #665653;
+            font-size: 15px;
+        }
+
+        .reason-card p {
+            min-height: 38px;
+            margin-bottom: 2px;
+            color: #77706b;
+            font-size: 13px;
+        }
+
+        .reason-button {
+            margin: 13px 0 0;
+            text-align: center;
+        }
 
         /* Section 5 — dải cảm nhận và thẻ vàng */
-        #section-5 { padding: 0; background: #fffaf8; }
-        .review-wrap { width: 100%; max-width: none; min-height: 390px; padding: 20px 16px 16px; background: #fff8f7 url("images/optimized/sesstion5.jpg") center / cover no-repeat; }
-        .review-title { margin-bottom: 3px; color: #cf5599; font-family: inherit; font-size: 21px; font-weight: 400; }
-        .review-wrap .section-heading { margin-bottom: 10px; }
-        .review-wrap .section-kicker { color: #8b6e66; font-size: 16px; font-style: normal; }
-        .review-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; width: min(100%, 1000px); margin: 0 auto; }
-        .review-card { min-width: 0; padding: 9px; border: 1px solid #f2e9c7; border-radius: 3px; background: #f8edb6; }
-        .review-quote { min-height: 104px; margin-bottom: 8px; padding: 10px 9px; background: #fffdf6; color: #6c5d57; font-size: 11px; line-height: 1.6; }
-        .reviewer { display: flex; align-items: center; gap: 7px; }
-        .review-avatar { display: block; flex: 0 0 34px; width: 34px; height: 34px; border: 2px solid rgba(255,255,255,.9); border-radius: 50%; background: linear-gradient(145deg,#e5a9bb,#9a7681); object-fit: cover; }
-        .reviewer-info { min-width: 0; }
-        .review-name { margin-bottom: 0; color: #665653; font-size: 11px; font-weight: 500; }
-        .review-age { margin-bottom: 0; color: #7d7168; font-size: 10px; }
-        .review-stars { margin: 0; color: #dfbb37; font-size: 13px; letter-spacing: 1px; }
-        .review-cta { margin-top: 10px; text-align: center; }
+        #section-5 {
+            padding: 0;
+            background: #fffaf8;
+        }
+
+        .review-wrap {
+            width: 100%;
+            max-width: none;
+            min-height: 390px;
+            padding: 20px 16px 16px;
+            background: #fff8f7 url("images/optimized/sesstion5.jpg") center / cover no-repeat;
+        }
+
+        .review-title {
+            margin-bottom: 3px;
+            color: #cf5599;
+            font-family: inherit;
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+        .review-wrap .section-heading {
+            margin-bottom: 10px;
+        }
+
+        .review-wrap .section-kicker {
+            color: #8b6e66;
+            font-size: 16px;
+            font-style: normal;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 9px;
+            width: min(100%, 1000px);
+            margin: 0 auto;
+        }
+
+        .review-card {
+            min-width: 0;
+            padding: 9px;
+            border: 1px solid #f2e9c7;
+            border-radius: 3px;
+            background: #f8edb6;
+        }
+
+        .review-quote {
+            min-height: 104px;
+            margin-bottom: 8px;
+            padding: 10px 9px;
+            background: #fffdf6;
+            color: #6c5d57;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .review-avatar {
+            display: block;
+            flex: 0 0 34px;
+            width: 34px;
+            height: 34px;
+            border: 2px solid rgba(255, 255, 255, .9);
+            border-radius: 50%;
+            background: linear-gradient(145deg, #e5a9bb, #9a7681);
+            object-fit: cover;
+        }
+
+        .reviewer-info {
+            min-width: 0;
+        }
+
+        .review-name {
+            margin-bottom: 0;
+            color: #665653;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .review-age {
+            margin-bottom: 0;
+            color: #7d7168;
+            font-size: 10px;
+        }
+
+        .review-stars {
+            margin: 0;
+            color: #dfbb37;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .review-cta {
+            margin-top: 10px;
+            text-align: center;
+        }
 
         /* Section 6 — năm chính sách hồng */
-        #section-6 { padding: 24px 0 28px; background: #fff4ef url("images/optimized/sesstion6.jpg") center / cover no-repeat; }
-        #section-6 .container { width: min(100% - 32px, 1240px); }
-        .policy-title { margin-bottom: 0; font-family: inherit; font-size: 21px; font-weight: 400; }
-        .policy-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; width: 100%; max-width: none; margin: 18px auto 0; }
-        .policy-card { min-height: 190px; padding: 16px 12px; border: 1px solid rgba(255,255,255,.72); border-radius: 3px; background: linear-gradient(180deg, rgba(244,230,241,.94) 0%, rgba(233,141,196,.94) 100%); text-align: center; }
-        .policy-icon { display: grid; width: 58px; height: 58px; margin: 0 auto 13px; border-radius: 50%; background: #d66ca7; color: #fff; place-items: center; }
-        .policy-icon svg { width: 26px; height: 26px; }
-        .policy-card p { margin: 0; color: #65565b; font-size: 13px; line-height: 1.5; }
-        .policy-note { margin: 16px 0 0; color: #776d6c; font-size: 13px; text-align: center; }
+        #section-6 {
+            padding: 24px 0 28px;
+            background: #fff4ef url("images/optimized/sesstion6.jpg") center / cover no-repeat;
+        }
+
+        #section-6 .container {
+            width: min(100% - 32px, 1240px);
+        }
+
+        .policy-title {
+            margin-bottom: 0;
+            font-family: inherit;
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 18px;
+            width: 100%;
+            max-width: none;
+            margin: 18px auto 0;
+        }
+
+        .policy-card {
+            min-height: 190px;
+            padding: 16px 12px;
+            border: 1px solid rgba(255, 255, 255, .72);
+            border-radius: 3px;
+            background: linear-gradient(180deg, rgba(244, 230, 241, .94) 0%, rgba(233, 141, 196, .94) 100%);
+            text-align: center;
+        }
+
+        .policy-icon {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 13px;
+            border-radius: 50%;
+            background: #d66ca7;
+            color: #fff;
+            place-items: center;
+        }
+
+        .policy-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .policy-card p {
+            margin: 0;
+            color: #65565b;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .policy-note {
+            margin: 16px 0 0;
+            color: #776d6c;
+            font-size: 13px;
+            text-align: center;
+        }
 
         /* Section 7 — đặt hàng, đồng hồ và email ưu đãi */
-        #section-7 { padding: 42px 0; background: #fff8f6; }
-        #section-7 .container { width: 100%; max-width: none; margin: 0; }
-        .order-scene { position: relative; display: grid; aspect-ratio: 2.65 / 1; min-height: 310px; padding: 22px; border: 0; background: #f6e6d7 url("images/optimized/sestion7.jpg") center / cover no-repeat; place-items: center; }
-        .order-box { width: min(46%, 520px); margin: 0 4% 0 auto; padding: 24px; border: 1px solid rgba(255,255,255,.8); border-radius: 16px; background: rgba(255,255,255,.88); box-shadow: 0 10px 28px rgba(89, 63, 47, .16); text-align: center; }
-        .order-flower { display: none; }
-        .order-kicker { margin-bottom: 5px; color: #bd6d87; font-family: inherit; font-size: 16px; font-style: italic; }
-        .order-box h2 { margin-bottom: 14px; color: #665653; font-family: inherit; font-size: 21px; font-weight: 400; }
-        .offer-price { display: grid; grid-template-columns: 1fr 1.2fr; grid-template-rows: 110px; gap: 10px; width: 100%; height: 110px; margin-bottom: 13px; }
-        .offer-price > div { display: flex; min-width: 0; height: 110px; flex-direction: column; align-items: center; justify-content: center; padding: 8px; border-radius: 9px; background: #fff1ed; color: #916a64; font-size: 14px; text-align: center; }
-        .offer-price .price-now { background: #d4429b; color: #fff; font-size: 21px; font-weight: 600; }
-        .price-now small { display: block; font-size: 12px; font-weight: 400; }
-        .order-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 42px 42px 44px; align-content: start; gap: 9px; width: 100%; height: 146px; margin: 0; }
-        .order-form input, .order-form select { display: block; box-sizing: border-box; width: 100%; min-width: 0; max-width: 100%; height: 42px; margin: 0; padding: 8px 11px; border: 1px solid #f2dfae; border-radius: 8px; background: rgba(255,247,207,.92); color: #544c42; font: inherit; font-size: 13px; }
-        .order-form button { grid-column: 2; box-sizing: border-box; width: 100%; min-width: 0; height: 44px; margin: 0; padding: 10px 14px; font-size: 14px; }
-        .countdown-band { position: absolute; z-index: 2; left: 35%; bottom: 300px; display: grid; justify-items: center; gap: 8px; width: auto; max-width: 58%; padding: 0; border: 0; background: transparent; color: #70464b; text-align: center; transform: translateX(-50%); }
-        .countdown-band > span { font-size: 15px; font-weight: 600; text-shadow: 0 1px 4px rgba(255,255,255,.9); }
-        .countdown { display: flex; justify-content: center; gap: 9px; margin: 0; }
-        .time-box { min-width: 64px; padding: 8px 9px; border-radius: 7px; background: #fff; color: #b94e8d; text-align: center; box-shadow: 0 2px 7px rgba(151,92,99,.12); }
-        .time-box strong { display: block; font-size: 24px; line-height: 1.1; }
-        .time-box span { font-size: 12px; }
-        .countdown-note { margin: 0; color: #70464b; font-size: 12px; text-shadow: 0 1px 4px rgba(255,255,255,.95); }
-        .email-band { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 12px; min-height: 40px; padding: 6px 18px; background: linear-gradient(90deg, #f5e9b5 0 54%, #d4429b 54% 100%); color: #665653; font-size: 12px; font-weight: 500; text-align: center; }
-        .email-form { display: grid; grid-template-columns: 1fr auto; gap: 6px; width: min(100%, 300px); margin: 0 auto; }
-        .email-form input { width: 100%; min-width: 0; padding: 6px 10px; border: 0; border-radius: 16px; font: inherit; font-size: 10px; }
-        .email-form button { padding: 6px 12px; border: 0; border-radius: 16px; background: #f5c943; color: #665653; font-size: 10px; font-weight: 600; }
+        #section-7 {
+            padding: 42px 0;
+            background: #fff8f6;
+        }
+
+        #section-7 .container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+        }
+
+        .order-scene {
+            position: relative;
+            display: block;
+            aspect-ratio: 2.65 / 1;
+            min-height: 474px;
+            padding: 22px;
+            border: 0;
+            background: #f6e6d7 url("images/optimized/sestion7.jpg") center / cover no-repeat;
+        }
+
+        .order-box {
+            position: absolute;
+            top: 22px;
+            right: 5%;
+            box-sizing: border-box;
+            width: 520px;
+            max-width: calc(100% - 44px);
+            height: 430px;
+            margin: 0;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .88);
+            box-shadow: 0 10px 28px rgba(89, 63, 47, .16);
+            text-align: center;
+        }
+
+        .order-flower {
+            display: none;
+        }
+
+        .order-kicker {
+            margin-bottom: 5px;
+            color: #bd6d87;
+            font-family: inherit;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .order-box h2 {
+            margin-bottom: 14px;
+            color: #665653;
+            font-family: inherit;
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+        .offer-price {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            grid-template-rows: 110px;
+            gap: 10px;
+            width: 100%;
+            height: 110px;
+            margin-bottom: 13px;
+        }
+
+        .offer-price>div {
+            display: flex;
+            min-width: 0;
+            height: 110px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 9px;
+            background: #fff1ed;
+            color: #916a64;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .offer-price .price-now {
+            background: #d4429b;
+            color: #fff;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .price-now small {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .order-form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: 42px 42px 44px;
+            align-content: start;
+            gap: 9px;
+            width: 100%;
+            height: 146px;
+            margin: 0;
+        }
+
+        .order-field {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            height: 42px;
+            padding: 8px 11px;
+            border: 1px solid #f2dfae;
+            border-radius: 8px;
+            background: rgba(255, 247, 207, .92);
+            color: #8d8275;
+            font: inherit;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .order-submit {
+            display: flex;
+            grid-column: 2;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
+            height: 44px;
+            margin: 0;
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .countdown-band {
+            position: absolute;
+            z-index: 2;
+            left: 35%;
+            bottom: 300px;
+            display: grid;
+            justify-items: center;
+            gap: 8px;
+            width: auto;
+            max-width: 58%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #70464b;
+            text-align: center;
+            transform: translateX(-50%);
+        }
+
+        .countdown-band>span {
+            font-size: 15px;
+            font-weight: 600;
+            text-shadow: 0 1px 4px rgba(255, 255, 255, .9);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 9px;
+            margin: 0;
+        }
+
+        .time-box {
+            min-width: 64px;
+            padding: 8px 9px;
+            border-radius: 7px;
+            background: #fff;
+            color: #b94e8d;
+            text-align: center;
+            box-shadow: 0 2px 7px rgba(151, 92, 99, .12);
+        }
+
+        .time-box strong {
+            display: block;
+            font-size: 24px;
+            line-height: 1.1;
+        }
+
+        .time-box span {
+            font-size: 12px;
+        }
+
+        .countdown-note {
+            margin: 0;
+            color: #70464b;
+            font-size: 12px;
+            text-shadow: 0 1px 4px rgba(255, 255, 255, .95);
+        }
+
+        .email-band {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            align-items: center;
+            gap: 12px;
+            min-height: 40px;
+            padding: 6px 18px;
+            background: linear-gradient(90deg, #f5e9b5 0 54%, #d4429b 54% 100%);
+            color: #665653;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .email-form {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 6px;
+            width: min(100%, 300px);
+            margin: 0 auto;
+        }
+
+        .email-field {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-width: 0;
+            padding: 6px 10px;
+            border: 0;
+            border-radius: 16px;
+            background: #fff;
+            color: #8d8275;
+            font: inherit;
+            font-size: 10px;
+            text-align: left;
+        }
+
+        .email-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            border: 0;
+            border-radius: 16px;
+            background: #f5c943;
+            color: #665653;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
         @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
         }
 
         /* Section 8 — chân trang gọn như mẫu */
-        #section-8 { padding: 18px 0 12px; border-top: 1px solid #e9a7c8; background: #fffdfa url("images/optimized/sestion8.jpg") center / cover no-repeat; }
-        .footer-grid { display: grid; grid-template-columns: 1.1fr 1fr .9fr; gap: 30px; align-items: start; width: calc(100% - 32px); max-width: 1100px; min-height: 190px; margin: 0 auto; padding: 22px 26px; border: 1px solid rgba(225,192,198,.55); border-radius: 14px; background: rgba(255,255,255,.82); box-shadow: 0 8px 24px rgba(112,70,75,.08); }
-        .footer-grid h3 { margin: 0 0 12px; color: #70464b; font-size: 13px; letter-spacing: .04em; }
-        .footer-grid p, .footer-grid a { color: #615c5c; font-size: 12px; }
-        .footer-brand-row { display: flex; align-items: center; justify-content: flex-start; gap: 14px; margin-bottom: 12px; }
-        .footer-logo { display: block; width: 96px; height: 96px; border: 1px solid #f0d6e2; border-radius: 50%; object-fit: cover; }
-        .footer-contact { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
-        .footer-contact li { display: flex; align-items: center; gap: 9px; color: #615c5c; font-size: 12px; }
-        .footer-contact svg, .footer-service-icon { flex: 0 0 16px; width: 16px; height: 16px; color: #bc5d8b; }
-        .footer-service-list { display: grid; gap: 9px; }
-        .footer-service-list a { display: flex; align-items: center; gap: 9px; text-decoration: none; }
-        .footer-service-list a:hover, .footer-link:hover { color: #d4429b; }
-        .footer-grid a.button { color: #fff; }
-        .footer-grid p { margin: 3px 0; }
-        .footer-link { text-decoration: none; }
-        .social-title { margin: 15px 0 8px; color: #70464b; font-size: 12px; font-weight: 600; }
-        .social-icons { display: flex; align-items: center; gap: 8px; }
-        .social-icon { display: grid; width: 30px; height: 30px; border: 1px solid #f0d6e2; border-radius: 50%; background: #fff; color: #c64d91; place-items: center; }
-        .social-icon svg { width: 16px; height: 16px; }
-        .footer-connect-copy { margin-bottom: 13px !important; line-height: 1.6; }
-        .copyright { width: calc(100% - 32px); max-width: 1100px; margin: 12px auto 0; padding-top: 9px; border-top: 1px solid rgba(229,221,218,.85); color: #898180; font-size: 10px; text-align: center; }
+        #section-8 {
+            padding: 18px 0 12px;
+            border-top: 1px solid #e9a7c8;
+            background: #fffdfa url("images/optimized/sestion8.jpg") center / cover no-repeat;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr .9fr;
+            gap: 30px;
+            align-items: start;
+            width: calc(100% - 32px);
+            max-width: 1100px;
+            min-height: 190px;
+            margin: 0 auto;
+            padding: 22px 26px;
+            border: 1px solid rgba(225, 192, 198, .55);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .82);
+            box-shadow: 0 8px 24px rgba(112, 70, 75, .08);
+        }
+
+        .footer-grid h3 {
+            margin: 0 0 12px;
+            color: #70464b;
+            font-size: 13px;
+            letter-spacing: .04em;
+        }
+
+        .footer-grid p,
+        .footer-grid a {
+            color: #615c5c;
+            font-size: 12px;
+        }
+
+        .footer-brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo {
+            display: block;
+            width: 96px;
+            height: 96px;
+            border: 1px solid #f0d6e2;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .footer-contact {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #615c5c;
+            font-size: 12px;
+        }
+
+        .footer-contact svg,
+        .footer-service-icon {
+            flex: 0 0 16px;
+            width: 16px;
+            height: 16px;
+            color: #bc5d8b;
+        }
+
+        .footer-service-list {
+            display: grid;
+            gap: 9px;
+        }
+
+        .footer-service-list a {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            text-decoration: none;
+        }
+
+        .footer-service-list a:hover,
+        .footer-link:hover {
+            color: #d4429b;
+        }
+
+        .footer-grid a.button {
+            color: #fff;
+        }
+
+        .footer-grid p {
+            margin: 3px 0;
+        }
+
+        .footer-link {
+            text-decoration: none;
+        }
+
+        .social-title {
+            margin: 15px 0 8px;
+            color: #70464b;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-icon {
+            display: grid;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #f0d6e2;
+            border-radius: 50%;
+            background: #fff;
+            color: #c64d91;
+            place-items: center;
+        }
+
+        .social-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .footer-connect-copy {
+            margin-bottom: 13px !important;
+            line-height: 1.6;
+        }
+
+        .copyright {
+            width: calc(100% - 32px);
+            max-width: 1100px;
+            margin: 12px auto 0;
+            padding-top: 9px;
+            border-top: 1px solid rgba(229, 221, 218, .85);
+            color: #898180;
+            font-size: 10px;
+            text-align: center;
+        }
 
         @media (max-width: 760px) {
-            .site-nav { justify-content: space-between; gap: 10px; padding: 8px 14px; }
-            .nav-links { gap: 12px; }
-            .nav-links a { font-size: 11px; }
-            .nav-offer { display: none; }
-            .nav-cta { padding: 8px 12px; font-size: 11px; }
-            .container { width: min(100% - 22px, 1100px); }
-            .hero { grid-template-columns: 1fr 1fr; min-height: 250px; }
-            .hero-copy { padding-left: 9%; }
-            .brand { font-size: clamp(42px, 8vw, 58px); }
-            .hero-image { height: 250px; }
-            .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-            .reason-section { min-height: 0; padding: 22px 20px 28px; }
-            .reason-grid { gap: 14px; padding-right: 0; padding-left: 0; }
-            .policy-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-            #section-7 .container { width: 100%; }
-            .order-scene { min-height: 300px; padding: 16px; }
-            .order-box { width: min(52%, 460px); margin-right: 3%; padding: 20px; }
-            .countdown-band { left: 33%; bottom: 200px; max-width: 62%; }
+            .site-nav {
+                justify-content: space-between;
+                gap: 10px;
+                padding: 8px 14px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .nav-offer {
+                display: none;
+            }
+
+            .nav-cta {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+
+            .container {
+                width: min(100% - 22px, 1100px);
+            }
+
+            .hero {
+                grid-template-columns: 1fr 1fr;
+                min-height: 250px;
+                aspect-ratio: auto;
+            }
+
+            .hero-copy {
+                padding-left: 9%;
+            }
+
+            .brand {
+                font-size: clamp(42px, 8vw, 58px);
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+
+            #section-2 {
+                display: block;
+                aspect-ratio: auto;
+                min-height: 0;
+                height: auto;
+                padding: 28px 0 32px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .story {
+                aspect-ratio: auto;
+            }
+
+            .reason-section {
+                min-height: 0;
+                padding: 22px 20px 28px;
+            }
+
+            .reason-grid {
+                gap: 14px;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .policy-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            #section-7 .container {
+                width: 100%;
+            }
+
+            .order-scene {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 0;
+                padding: 24px 16px;
+                background-position: center;
+            }
+
+            .order-box {
+                position: relative;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: auto;
+                width: 100%;
+                max-width: 480px;
+                height: auto;
+                min-height: 0;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 16px;
+                background: rgba(255, 255, 255, .94);
+                box-shadow: 0 8px 24px rgba(89, 63, 47, .14);
+            }
+
+            .countdown-band {
+                position: relative;
+                top: auto;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                width: 100%;
+                max-width: 480px;
+                margin: 16px auto 0;
+                padding: 14px 16px;
+                border-radius: 14px;
+                background: rgba(255, 255, 255, .94);
+                box-shadow: 0 6px 20px rgba(89, 63, 47, .14);
+                transform: none;
+            }
+
+            .countdown-band>span {
+                font-size: 14px;
+                color: #70464b;
+                text-shadow: none;
+            }
+
+            .countdown-note {
+                color: #70464b;
+                font-size: 11px;
+                text-shadow: none;
+                margin-top: 4px;
+            }
         }
+
         @media (max-width: 520px) {
-            .site-nav { flex-wrap: wrap; justify-content: center; min-height: 0; padding: 9px 10px; }
-            .nav-brand { margin-right: auto; }
-            .nav-links { order: 3; width: 100%; justify-content: space-around; gap: 8px; }
-            .nav-links a { font-size: 11px; }
-            .section { padding: 20px 0; }
-            .hero { grid-template-columns: 1fr; min-height: 400px; }
-            .hero-copy { width: 62%; padding: 22px 12px 12px 22px; }
-            .brand { font-size: clamp(38px, 10vw, 50px); }
-            .hero-image { height: 100%; object-position: center; }
-            .hero-copy p { font-size: 12px; }
-            .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
-            .product-copy h3 { min-height: 0; }
-            .product-button { min-width: 100px; }
-            .story { display: block; min-height: 0; padding-top: 150px; }
-            .story-image { inset: 0 0 auto; height: 150px; object-position: left center; }
-            .story-copy { padding: 14px 20px 20px; }
-            .reason-section { padding: 20px 12px 24px; background-position: center; }
-            .reason-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; padding: 10px 0; }
-            .reason-card:nth-child(even) { margin-top: 0; }
-            .review-wrap { min-height: 0; padding: 20px 14px; }
-            .review-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-            .review-quote { min-height: 124px; }
-            .policy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
-            .policy-card { min-height: 148px; }
-            .order-scene { display: block; aspect-ratio: auto; min-height: 370px; padding: 14px 10px; background-position: center; }
-            .order-box { width: min(100%, 360px); margin: 0 auto; padding: 15px; border-radius: 14px; }
-            .countdown-band { position: static; width: 100%; max-width: 360px; margin: 12px auto 0; transform: none; }
-            .order-box h2 { font-size: 23px; }
-            .offer-price, .offer-price > div { height: 96px; }
-            .offer-price { grid-template-rows: 96px; }
-            .email-band { grid-template-columns: 1fr; gap: 7px; background: #f3e8b4; }
-            .email-form { padding: 4px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 18px; padding: 18px; }
-            .footer-grid > div:first-child { grid-column: 1 / -1; }
-            .footer-grid > div:last-child { grid-column: 1 / -1; }
+            .site-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                min-height: 0;
+                padding: 9px 10px;
+            }
+
+            .nav-brand {
+                margin-right: auto;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: space-around;
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .section {
+                padding: 20px 0;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: 400px;
+                aspect-ratio: auto;
+            }
+
+            .hero-copy {
+                width: 62%;
+                padding: 22px 12px 12px 22px;
+            }
+
+            .brand {
+                font-size: clamp(38px, 10vw, 50px);
+            }
+
+            .hero-image {
+                height: 100%;
+                object-position: center;
+            }
+
+            .hero-copy p {
+                font-size: 12px;
+            }
+
+            #section-2 {
+                display: block;
+                aspect-ratio: auto;
+                min-height: 0;
+                height: auto;
+                padding: 24px 0 28px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px 12px;
+            }
+
+            .product-copy h3 {
+                min-height: 0;
+            }
+
+            .product-button {
+                min-width: 100px;
+            }
+
+            .story {
+                display: block;
+                min-height: 0;
+                height: auto;
+                aspect-ratio: auto;
+                padding-top: 150px;
+            }
+
+            .story-image {
+                inset: 0 0 auto;
+                height: 150px;
+                object-position: left center;
+            }
+
+            .story-copy {
+                padding: 14px 20px 20px;
+            }
+
+            .reason-section {
+                min-height: 0;
+                padding: 20px 12px 24px;
+                background-position: center;
+            }
+
+            .reason-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px 12px;
+                padding: 10px 0;
+            }
+
+            .reason-card:nth-child(even) {
+                margin-top: 0;
+            }
+
+            .review-wrap {
+                min-height: 0;
+                padding: 20px 14px;
+            }
+
+            .review-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+            }
+
+            .review-quote {
+                min-height: 124px;
+            }
+
+            .policy-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 9px;
+            }
+
+            .policy-card {
+                min-height: 148px;
+            }
+
+            .policy-card:last-child {
+                grid-column: 1 / -1;
+                width: min(100%, 280px);
+                margin: 0 auto;
+            }
+
+            .order-scene {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                aspect-ratio: auto;
+                min-height: 0;
+                padding: 20px 12px;
+                background-position: center;
+            }
+
+            .order-box {
+                position: relative;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: auto;
+                width: 100%;
+                max-width: 360px;
+                height: auto;
+                min-height: 0;
+                margin: 0 auto;
+                padding: 18px 14px;
+                border-radius: 14px;
+                background: rgba(255, 255, 255, .95);
+                box-shadow: 0 8px 24px rgba(89, 63, 47, .14);
+            }
+
+            .order-kicker {
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+
+            .order-box h2 {
+                font-size: 18px;
+                line-height: 1.3;
+                margin-bottom: 12px;
+            }
+
+            .offer-price {
+                grid-template-rows: 86px;
+                gap: 8px;
+                margin-bottom: 12px;
+                height: 86px;
+            }
+
+            .offer-price>div {
+                height: 86px;
+                font-size: 13px;
+                padding: 6px;
+            }
+
+            .offer-price .price-now {
+                font-size: 18px;
+            }
+
+            .price-now small {
+                font-size: 11px;
+            }
+
+            .order-form {
+                gap: 8px;
+                height: auto;
+                min-height: 0;
+                grid-template-rows: 38px 38px 40px;
+            }
+
+            .order-field {
+                height: 38px;
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+
+            .order-submit {
+                height: 40px;
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .countdown-band {
+                position: relative;
+                top: auto;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                width: 100%;
+                max-width: 360px;
+                margin: 16px auto 0;
+                padding: 14px 12px;
+                border-radius: 14px;
+                background: rgba(255, 255, 255, .94);
+                box-shadow: 0 6px 20px rgba(89, 63, 47, .14);
+                transform: none;
+            }
+
+            .countdown-band>span {
+                font-size: 14px;
+                color: #70464b;
+                text-shadow: none;
+            }
+
+            .countdown {
+                gap: 6px;
+            }
+
+            .time-box {
+                min-width: 52px;
+                padding: 6px 4px;
+            }
+
+            .time-box strong {
+                font-size: 20px;
+            }
+
+            .time-box span {
+                font-size: 11px;
+            }
+
+            .countdown-note {
+                color: #70464b;
+                font-size: 11px;
+                text-shadow: none;
+                margin-top: 4px;
+            }
+
+            .email-band {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding: 10px 14px;
+                background: #f3e8b4;
+            }
+
+            .email-form {
+                width: 100%;
+                max-width: 320px;
+                padding: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px 16px;
+            }
+
+            .footer-grid>div:first-child {
+                grid-column: auto;
+            }
+
+            .footer-grid>div:last-child {
+                grid-column: auto;
+            }
         }
     </style>
 </head>
+
 <body class="ldp-rules-v1">
     <nav class="site-nav" aria-label="Điều hướng chính">
         <a class="nav-brand" href="#section-1" aria-label="MoChi, về đầu trang">MoChi</a>
@@ -247,10 +1549,12 @@
                 <a class="brand" href="#section-1" aria-label="MoChi Shop">MoChi</a>
                 <span class="brand-subtitle">Nàng thơ</span>
                 <p class="hero-tagline">Bắt đầu từ mái tóc</p>
-                <p>Phụ kiện tóc dành cho những cô gái yêu sự nhẹ nhàng, tinh tế và luôn muốn outfit đẹp hơn chỉ bằng một chi tiết nhỏ.</p>
+                <p>Phụ kiện tóc dành cho những cô gái yêu sự nhẹ nhàng, tinh tế và luôn muốn outfit đẹp hơn chỉ bằng một
+                    chi tiết nhỏ.</p>
                 <a class="button" href="#section-2">ĐẶT MUA NGAY</a>
             </div>
-            <img class="hero-image" src="images/optimized/banner.jpg" width="3702" height="1152" fetchpriority="high" decoding="async" alt="Nàng thơ MoChi với phụ kiện tóc">
+            <img class="hero-image" src="images/optimized/banner.jpg" width="3702" height="1152" fetchpriority="high"
+                decoding="async" alt="Nàng thơ MoChi với phụ kiện tóc">
         </div>
     </header>
 
@@ -263,10 +1567,42 @@
                 <p>Những mẫu kẹp được thiết kế để tôn lên vẻ đẹp tự nhiên và phong cách riêng của bạn.</p>
             </div>
             <div class="product-grid">
-                <article class="product-card"><img class="product-image" src="images/optimized/1.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp tóc nơ hồng MoChi"><div class="product-copy"><h3>Kẹp nơ MoChi</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm kẹp nơ">♡</a></div></div></article>
-                <article class="product-card"><img class="product-image" src="images/optimized/2.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp hoa hồng MoChi"><div class="product-copy"><h3>Hoa hồng dịu dàng</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa hồng">♡</a></div></div></article>
-                <article class="product-card"><img class="product-image" src="images/optimized/3.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp hoa biển xanh MoChi"><div class="product-copy"><h3>Hoa biển xanh</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa biển">♡</a></div></div></article>
-                <article class="product-card"><img class="product-image" src="images/optimized/4.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Kẹp càng cua MoChi màu nâu"><div class="product-copy"><h3>Kẹp càng cua MoChi</h3><div class="product-price">17.500₫</div><div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a class="heart" href="#section-7" aria-label="Chọn kẹp càng cua">♡</a></div></div></article>
+                <article class="product-card"><img class="product-image" src="images/optimized/1.jpg" width="2048"
+                        height="2048" loading="lazy" decoding="async" alt="Kẹp tóc nơ hồng MoChi">
+                    <div class="product-copy">
+                        <h3>Kẹp nơ MoChi</h3>
+                        <div class="product-price">17.500₫</div>
+                        <div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a
+                                class="heart" href="#section-7" aria-label="Chọn sản phẩm kẹp nơ">♡</a></div>
+                    </div>
+                </article>
+                <article class="product-card"><img class="product-image" src="images/optimized/2.jpg" width="2048"
+                        height="2048" loading="lazy" decoding="async" alt="Kẹp hoa hồng MoChi">
+                    <div class="product-copy">
+                        <h3>Hoa hồng dịu dàng</h3>
+                        <div class="product-price">17.500₫</div>
+                        <div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a
+                                class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa hồng">♡</a></div>
+                    </div>
+                </article>
+                <article class="product-card"><img class="product-image" src="images/optimized/3.jpg" width="2048"
+                        height="2048" loading="lazy" decoding="async" alt="Kẹp hoa biển xanh MoChi">
+                    <div class="product-copy">
+                        <h3>Hoa biển xanh</h3>
+                        <div class="product-price">17.500₫</div>
+                        <div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a
+                                class="heart" href="#section-7" aria-label="Chọn sản phẩm hoa biển">♡</a></div>
+                    </div>
+                </article>
+                <article class="product-card"><img class="product-image" src="images/optimized/4.jpg" width="2048"
+                        height="2048" loading="lazy" decoding="async" alt="Kẹp càng cua MoChi màu nâu">
+                    <div class="product-copy">
+                        <h3>Kẹp càng cua MoChi</h3>
+                        <div class="product-price">17.500₫</div>
+                        <div class="product-actions"><a class="product-button" href="#section-7">MUA NGAY</a><a
+                                class="heart" href="#section-7" aria-label="Chọn kẹp càng cua">♡</a></div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -274,13 +1610,21 @@
     <!-- SECTION 3: CÂU CHUYỆN THƯƠNG HIỆU -->
     <section id="section-3" class="section">
         <div class="container story">
-            <img class="story-image" src="images/optimized/sesstion3.jpg" width="3412" height="1216" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trên nền hoa và lá cọ">
+            <img class="story-image" src="images/optimized/sesstion3.jpg" width="3412" height="1216" loading="lazy"
+                decoding="async" alt="Phụ kiện tóc MoChi trên nền hoa và lá cọ">
             <div class="story-copy">
                 <p class="story-kicker">HÀNH TRÌNH TẠO NÊN</p>
                 <h2>TÔN VINH NÉT ĐẸP BẢN SẮC TỪ MÁI TÓC</h2>
-                <p>MoChi lấy cảm hứng từ vẻ đẹp dịu dàng của ánh trăng, biểu tượng cho sự tinh tế, nữ tính và thanh lịch. Chúng tôi tin rằng mỗi cô gái đều có thể tỏa sáng theo cách riêng của mình, bắt đầu từ những chi tiết nhỏ nhưng đầy ý nghĩa trong phong cách hằng ngày.</p>
-                <p>Với thông điệp “Nàng thơ bắt đầu từ mái tóc”, MoChi không chỉ mang đến những chiếc kẹp tóc và phụ kiện thời trang mà còn mong muốn đồng hành cùng các cô gái trên hành trình chăm chút bản thân và tự tin thể hiện cá tính. Mỗi sản phẩm đều được lựa chọn kỹ lưỡng về thiết kế, chất liệu và màu sắc, theo đuổi phong cách Minimal – Aesthetic – Vintage – Quiet Luxury.</p>
-                <p>Bên cạnh vẻ đẹp thẩm mỹ, MoChi luôn chú trọng đến chất lượng và trải nghiệm sử dụng. Chúng tôi không ngừng sáng tạo để mang đến những phụ kiện tóc vừa thời trang, vừa có tính ứng dụng cao, giúp mỗi cô gái cảm thấy tự tin và rạng rỡ hơn trong cuộc sống hằng ngày.</p>
+                <p>MoChi lấy cảm hứng từ vẻ đẹp dịu dàng của ánh trăng, biểu tượng cho sự tinh tế, nữ tính và thanh
+                    lịch. Chúng tôi tin rằng mỗi cô gái đều có thể tỏa sáng theo cách riêng của mình, bắt đầu từ những
+                    chi tiết nhỏ nhưng đầy ý nghĩa trong phong cách hằng ngày.</p>
+                <p>Với thông điệp “Nàng thơ bắt đầu từ mái tóc”, MoChi không chỉ mang đến những chiếc kẹp tóc và phụ
+                    kiện thời trang mà còn mong muốn đồng hành cùng các cô gái trên hành trình chăm chút bản thân và tự
+                    tin thể hiện cá tính. Mỗi sản phẩm đều được lựa chọn kỹ lưỡng về thiết kế, chất liệu và màu sắc,
+                    theo đuổi phong cách Minimal – Aesthetic – Vintage – Quiet Luxury.</p>
+                <p>Bên cạnh vẻ đẹp thẩm mỹ, MoChi luôn chú trọng đến chất lượng và trải nghiệm sử dụng. Chúng tôi không
+                    ngừng sáng tạo để mang đến những phụ kiện tóc vừa thời trang, vừa có tính ứng dụng cao, giúp mỗi cô
+                    gái cảm thấy tự tin và rạng rỡ hơn trong cuộc sống hằng ngày.</p>
                 <a class="button" href="#section-2">KHÁM PHÁ THÊM</a>
             </div>
         </div>
@@ -295,10 +1639,26 @@
                 <p>Điều khiến MoChi trở thành chiếc kẹp bạn muốn dùng mỗi ngày.</p>
             </div>
             <div class="reason-grid">
-                <article class="reason-card"><img src="images/optimized/5.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 5"><h3>Thiết kế chuẩn Hàn Quốc</h3><p>Nhẹ nhàng, nữ tính và dễ phối với mọi outfit.</p></article>
-                <article class="reason-card"><img src="images/optimized/6.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 6"><h3>Nâng tầm phong cách</h3><p>Chỉ một chiếc kẹp nhỏ cũng đủ tạo điểm nhấn tinh tế.</p></article>
-                <article class="reason-card"><img src="images/optimized/7.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 7"><h3>Giữ tóc chắc chắn</h3><p>Chống trượt, không đau tóc, thoải mái cả ngày.</p></article>
-                <article class="reason-card"><img src="images/optimized/8.jpg" width="2048" height="2048" loading="lazy" decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 8"><h3>Chất liệu cao cấp</h3><p>Bền đẹp, hoàn thiện tỉ mỉ trong từng chi tiết.</p></article>
+                <article class="reason-card"><img src="images/optimized/5.jpg" width="2048" height="2048" loading="lazy"
+                        decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 5">
+                    <h3>Thiết kế chuẩn Hàn Quốc</h3>
+                    <p>Nhẹ nhàng, nữ tính và dễ phối với mọi outfit.</p>
+                </article>
+                <article class="reason-card"><img src="images/optimized/6.jpg" width="2048" height="2048" loading="lazy"
+                        decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 6">
+                    <h3>Nâng tầm phong cách</h3>
+                    <p>Chỉ một chiếc kẹp nhỏ cũng đủ tạo điểm nhấn tinh tế.</p>
+                </article>
+                <article class="reason-card"><img src="images/optimized/7.jpg" width="2048" height="2048" loading="lazy"
+                        decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 7">
+                    <h3>Giữ tóc chắc chắn</h3>
+                    <p>Chống trượt, không đau tóc, thoải mái cả ngày.</p>
+                </article>
+                <article class="reason-card"><img src="images/optimized/8.jpg" width="2048" height="2048" loading="lazy"
+                        decoding="async" alt="Phụ kiện tóc MoChi trong ảnh 8">
+                    <h3>Chất liệu cao cấp</h3>
+                    <p>Bền đẹp, hoàn thiện tỉ mỉ trong từng chi tiết.</p>
+                </article>
             </div>
             <div class="reason-button"><a class="button" href="#section-2">ĐẶT MUA NGAY</a></div>
         </div>
@@ -312,10 +1672,54 @@
                 <p class="section-kicker">MoChi trong trái tim nàng thơ</p>
             </div>
             <div class="review-grid">
-                <article class="review-card"><p class="review-quote">Đóng gói siêu chỉn chu, nhận hàng là mê luôn. Mình dùng đi học và đi cà phê đều đẹp, ai cũng hỏi mua ở đâu.</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-1.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Minh Anh"><div class="reviewer-info"><p class="review-name">Trần Minh Anh</p><p class="review-age">25 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
-                <article class="review-card"><p class="review-quote">Lần đầu mua nhưng rất bất ngờ vì chất lượng. Kẹp giữ tóc tốt, không bị tuột, phối với váy hay áo sơ mi đều rất xinh.</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-2.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Thu Uyên"><div class="reviewer-info"><p class="review-name">Hoàng Thu Uyên</p><p class="review-age">18 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
-                <article class="review-card"><p class="review-quote">Thiết kế đẹp, chất liệu chắc chắn, kẹp giữ tóc tốt. Đóng gói cẩn thận, giao hàng nhanh. Sẽ tiếp tục ủng hộ MoChi!</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-3.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Hoàng Anh"><div class="reviewer-info"><p class="review-name">Lê Hoàng Anh</p><p class="review-age">19 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
-                <article class="review-card"><p class="review-quote">Kẹp ôm tóc tốt, không bị đau da đầu, mẫu pastel cực kỳ nữ tính. Đóng gói cẩn thận, giao hàng nhanh.</p><div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-4.jpg" width="34" height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng My Anh"><div class="reviewer-info"><p class="review-name">Hà My Anh</p><p class="review-age">22 tuổi</p></div></div><p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p></article>
+                <article class="review-card">
+                    <p class="review-quote">Đóng gói siêu chỉn chu, nhận hàng là mê luôn. Mình dùng đi học và đi cà phê
+                        đều đẹp, ai cũng hỏi mua ở đâu.</p>
+                    <div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-1.jpg" width="34"
+                            height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Minh Anh">
+                        <div class="reviewer-info">
+                            <p class="review-name">Trần Minh Anh</p>
+                            <p class="review-age">25 tuổi</p>
+                        </div>
+                    </div>
+                    <p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p>
+                </article>
+                <article class="review-card">
+                    <p class="review-quote">Lần đầu mua nhưng rất bất ngờ vì chất lượng. Kẹp giữ tóc tốt, không bị tuột,
+                        phối với váy hay áo sơ mi đều rất xinh.</p>
+                    <div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-2.jpg" width="34"
+                            height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Thu Uyên">
+                        <div class="reviewer-info">
+                            <p class="review-name">Hoàng Thu Uyên</p>
+                            <p class="review-age">18 tuổi</p>
+                        </div>
+                    </div>
+                    <p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p>
+                </article>
+                <article class="review-card">
+                    <p class="review-quote">Thiết kế đẹp, chất liệu chắc chắn, kẹp giữ tóc tốt. Đóng gói cẩn thận, giao
+                        hàng nhanh. Sẽ tiếp tục ủng hộ MoChi!</p>
+                    <div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-3.jpg" width="34"
+                            height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng Hoàng Anh">
+                        <div class="reviewer-info">
+                            <p class="review-name">Lê Hoàng Anh</p>
+                            <p class="review-age">19 tuổi</p>
+                        </div>
+                    </div>
+                    <p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p>
+                </article>
+                <article class="review-card">
+                    <p class="review-quote">Kẹp ôm tóc tốt, không bị đau da đầu, mẫu pastel cực kỳ nữ tính. Đóng gói cẩn
+                        thận, giao hàng nhanh.</p>
+                    <div class="reviewer"><img class="review-avatar" src="images/reviewers/reviewer-4.jpg" width="34"
+                            height="34" loading="lazy" decoding="async" alt="Ảnh minh họa khách hàng My Anh">
+                        <div class="reviewer-info">
+                            <p class="review-name">Hà My Anh</p>
+                            <p class="review-age">22 tuổi</p>
+                        </div>
+                    </div>
+                    <p class="review-stars" aria-label="5 trên 5 sao">★★★★★</p>
+                </article>
             </div>
             <div class="review-cta"><a class="button" href="#section-7">MUA HÀNG VÀ TRẢI NGHIỆM NGAY</a></div>
         </div>
@@ -324,15 +1728,54 @@
     <!-- SECTION 6: CHÍNH SÁCH MUA HÀNG VÀ BẢO HÀNH -->
     <section id="section-6" class="section">
         <div class="container">
-            <div class="section-heading"><h2 class="pink policy-title">CHÍNH SÁCH MUA HÀNG &amp; BẢO HÀNH</h2></div>
-            <div class="policy-grid">
-                <article class="policy-card"><div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg></div><p>Giao hàng toàn quốc<br>Nội thành: 1–2 ngày<br>Tỉnh thành: 2–5 ngày<br>Đóng gói chỉnh chu.</p></article>
-                <article class="policy-card"><div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><p>Thanh toán linh hoạt<br>COD hoặc chuyển khoản tiện lợi.</p></article>
-                <article class="policy-card"><div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.5 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.5-3"/></svg></div><p>Đổi trả 7 ngày<br>Hỗ trợ đổi nếu sản phẩm lỗi hoặc giao sai.</p></article>
-                <article class="policy-card"><div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6z"/><path d="m8 12 2.5 2.5L16 9"/></svg></div><p>100% giống ảnh<br>Hoàn tiền nếu sai mô tả. Kiểm tra kỹ trước khi gửi.</p></article>
-                <article class="policy-card"><div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0v5h-4v-5h4M4 13v5h4v-5z"/><path d="M8 19c1 2 7 2 8 0"/></svg></div><p>Hỗ trợ tận tâm 24/7<br>Giải đáp nhanh chóng, hỗ trợ mọi vấn đề.</p></article>
+            <div class="section-heading">
+                <h2 class="pink policy-title">CHÍNH SÁCH MUA HÀNG &amp; BẢO HÀNH</h2>
             </div>
-            <p class="policy-note">Chúng tôi không chỉ bán sản phẩm — chúng tôi mong đem đến sự an tâm và hài lòng cho bạn!</p>
+            <div class="policy-grid">
+                <article class="policy-card">
+                    <div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z" />
+                            <circle cx="7.5" cy="19" r="1.5" />
+                            <circle cx="18" cy="19" r="1.5" />
+                        </svg></div>
+                    <p>Giao hàng toàn quốc<br>Nội thành: 1–2 ngày<br>Tỉnh thành: 2–5 ngày<br>Đóng gói chỉnh chu.</p>
+                </article>
+                <article class="policy-card">
+                    <div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <path d="M3 10h18M7 15h4" />
+                        </svg></div>
+                    <p>Thanh toán linh hoạt<br>COD hoặc chuyển khoản tiện lợi.</p>
+                </article>
+                <article class="policy-card">
+                    <div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M20 7v5h-5M4 17v-5h5" />
+                            <path d="M5.5 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.5-3" />
+                        </svg></div>
+                    <p>Đổi trả 7 ngày<br>Hỗ trợ đổi nếu sản phẩm lỗi hoặc giao sai.</p>
+                </article>
+                <article class="policy-card">
+                    <div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M12 3 20 6v5c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6z" />
+                            <path d="m8 12 2.5 2.5L16 9" />
+                        </svg></div>
+                    <p>100% giống ảnh<br>Hoàn tiền nếu sai mô tả. Kiểm tra kỹ trước khi gửi.</p>
+                </article>
+                <article class="policy-card">
+                    <div class="policy-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M4 13a8 8 0 0 1 16 0v5h-4v-5h4M4 13v5h4v-5z" />
+                            <path d="M8 19c1 2 7 2 8 0" />
+                        </svg></div>
+                    <p>Hỗ trợ tận tâm 24/7<br>Giải đáp nhanh chóng, hỗ trợ mọi vấn đề.</p>
+                </article>
+            </div>
+            <p class="policy-note">Chúng tôi không chỉ bán sản phẩm — chúng tôi mong đem đến sự an tâm và hài lòng cho
+                bạn!</p>
         </div>
     </section>
 
@@ -343,19 +1786,36 @@
                 <div class="order-box">
                     <p class="order-kicker">Ưu đãi ngọt ngào dành cho nàng</p>
                     <h2>ĐIỀN THÔNG TIN ĐỂ ĐẶT HÀNG NGAY</h2>
-                    <div class="offer-price"><div>Giảm ngay<br><strong>50%</strong></div><div class="price-now">Giá chỉ còn<br>17.500₫<small>Giá gốc: 35.000₫</small></div></div>
-                    <form class="order-form" action="mailto:Mochi23@gmail.com" method="post" enctype="text/plain">
-                        <input type="text" name="Ho va ten" autocomplete="name" placeholder="Họ và tên" aria-label="Họ và tên" required>
-                        <input type="tel" name="So dien thoai" autocomplete="tel" placeholder="Số điện thoại" aria-label="Số điện thoại" required>
-                        <input type="text" name="Dia chi" autocomplete="street-address" placeholder="Địa chỉ nhận hàng" aria-label="Địa chỉ nhận hàng" required>
-                        <select name="San pham" aria-label="Chọn sản phẩm" required><option value="" selected disabled>Chọn sản phẩm</option><option>Kẹp nơ MoChi</option><option>Hoa hồng dịu dàng</option><option>Hoa biển xanh</option><option>Kẹp càng cua MoChi</option></select>
-                        <input type="number" name="So luong" min="1" value="1" aria-label="Số lượng" required>
-                        <button class="button" type="submit">LIÊN HỆ NGAY</button>
-                    </form>
+                    <div class="offer-price">
+                        <div>Giảm ngay<br><strong>50%</strong></div>
+                        <div class="price-now">Giá chỉ còn<br>17.500₫<small>Giá gốc: 35.000₫</small></div>
+                    </div>
+                    <div class="order-form" aria-label="Thông tin đặt hàng minh họa">
+                        <div class="order-field">Họ và tên</div>
+                        <div class="order-field">Số điện thoại</div>
+                        <div class="order-field">Địa chỉ nhận hàng</div>
+                        <div class="order-field">Chọn sản phẩm <span aria-hidden="true">⌄</span></div>
+                        <div class="order-field">1</div>
+                        <div class="button order-submit">LIÊN HỆ NGAY</div>
+                    </div>
                 </div>
-                <div class="countdown-band"><span>ƯU ĐÃI KẾT THÚC SAU</span><div class="countdown" aria-label="Thời gian còn lại của ưu đãi"><div class="time-box"><strong id="count-days">--</strong><span>Ngày</span></div><div class="time-box"><strong id="count-hours">--</strong><span>Giờ</span></div><div class="time-box"><strong id="count-minutes">--</strong><span>Phút</span></div><div class="time-box"><strong id="count-seconds">--</strong><span>Giây</span></div></div><p class="countdown-note" id="countdown-note" aria-live="polite">Ưu đãi có hiệu lực trong 2 giờ kể từ lần truy cập đầu tiên.</p></div>
+                <div class="countdown-band"><span>ƯU ĐÃI KẾT THÚC SAU</span>
+                    <div class="countdown" aria-label="Thời gian còn lại của ưu đãi">
+                        <div class="time-box"><strong id="count-days">--</strong><span>Ngày</span></div>
+                        <div class="time-box"><strong id="count-hours">--</strong><span>Giờ</span></div>
+                        <div class="time-box"><strong id="count-minutes">--</strong><span>Phút</span></div>
+                        <div class="time-box"><strong id="count-seconds">--</strong><span>Giây</span></div>
+                    </div>
+                    <p class="countdown-note" id="countdown-note" aria-live="polite">Ưu đãi có hiệu lực trong 2 giờ kể
+                        từ lần truy cập đầu tiên.</p>
+                </div>
             </div>
-            <div class="email-band"><span>GET 20% OFF YOUR FIRST ORDER</span><form class="email-form" action="mailto:Mochi23@gmail.com" method="post" enctype="text/plain"><input type="email" name="Email" placeholder="Nhập email của bạn" aria-label="Email của bạn" required><button type="submit">Nhận ưu đãi</button></form></div>
+            <div class="email-band"><span>GET 20% OFF YOUR FIRST ORDER</span>
+                <div class="email-form">
+                    <div class="email-field">Nhập email của bạn</div>
+                    <div class="email-btn">Nhận ưu đãi</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -365,26 +1825,63 @@
             <div class="footer-grid">
                 <div class="footer-brand-block">
                     <div class="footer-brand-row">
-                        <a href="#section-1" aria-label="MoChi Shop"><img class="footer-logo" src="images/mochi-logo.svg" alt="Logo MoChi Shop"></a>
+                        <a href="#section-1" aria-label="MoChi Shop"><img class="footer-logo"
+                                src="images/mochi-logo.svg" alt="Logo MoChi Shop"></a>
                     </div>
                     <ul class="footer-contact">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Thạch Thất, Hà Nội</span></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h3l2 5-2 1.5a15 15 0 0 0 4.5 4.5L16 12l5 2v3c0 1.1-.9 2-2 2C10 19 5 14 5 5c0-1.1.9-2 2-2Z"/></svg><a class="footer-link" href="tel:0353351808">0353351808</a></li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><a class="footer-link" href="mailto:Mochi23@gmail.com">Mochi23@gmail.com</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                aria-hidden="true">
+                                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                                <circle cx="12" cy="10" r="2.5" />
+                            </svg><span>Thạch Thất, Hà Nội</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                aria-hidden="true">
+                                <path
+                                    d="M7 3h3l2 5-2 1.5a15 15 0 0 0 4.5 4.5L16 12l5 2v3c0 1.1-.9 2-2 2C10 19 5 14 5 5c0-1.1.9-2 2-2Z" />
+                            </svg><a class="footer-link" href="tel:0353351808">0353351808</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path d="m4 7 8 6 8-6" />
+                            </svg><a class="footer-link" href="mailto:Mochi23@gmail.com">Mochi23@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-services">
                     <h3>DỊCH VỤ KHÁCH HÀNG</h3>
                     <div class="footer-service-list">
-                        <a href="#section-6"><svg class="footer-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg>Giao hàng &amp; đổi trả</a>
-                        <a href="#section-6"><svg class="footer-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6z"/><path d="m8 12 2.5 2.5L16 9"/></svg>Chính sách bảo mật</a>
-                        <a href="#section-7"><svg class="footer-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v12H8l-4 3z"/><path d="M8 9h8M8 13h5"/></svg>Hỗ trợ đặt hàng</a>
+                        <a href="#section-6"><svg class="footer-service-icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z" />
+                                <circle cx="7.5" cy="19" r="1.5" />
+                                <circle cx="18" cy="19" r="1.5" />
+                            </svg>Giao hàng &amp; đổi trả</a>
+                        <a href="#section-6"><svg class="footer-service-icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <path d="M12 3 20 6v5c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6z" />
+                                <path d="m8 12 2.5 2.5L16 9" />
+                            </svg>Chính sách bảo mật</a>
+                        <a href="#section-7"><svg class="footer-service-icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <path d="M4 5h16v12H8l-4 3z" />
+                                <path d="M8 9h8M8 13h5" />
+                            </svg>Hỗ trợ đặt hàng</a>
                     </div>
                     <p class="social-title">KẾT NỐI VỚI MOCHI</p>
                     <div class="social-icons" aria-label="Mạng xã hội">
-                        <span class="social-icon" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.4V13h2.7v8z"/></svg></span>
-                        <span class="social-icon" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></span>
-                        <span class="social-icon" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 3c.4 2.5 1.8 4 4 4.3v3.1a8 8 0 0 1-4-1.2v6.2a5.6 5.6 0 1 1-5.6-5.6c.5 0 1 .1 1.5.2v3.3a2.6 2.6 0 1 0 1.1 2.1V3z"/></svg></span>
+                        <span class="social-icon" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="currentColor"
+                                    d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.4V13h2.7v8z" />
+                            </svg></span>
+                        <span class="social-icon" title="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.7" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+                            </svg></span>
+                        <span class="social-icon" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="currentColor"
+                                    d="M16 3c.4 2.5 1.8 4 4 4.3v3.1a8 8 0 0 1-4-1.2v6.2a5.6 5.6 0 1 1-5.6-5.6c.5 0 1 .1 1.5.2v3.3a2.6 2.6 0 1 0 1.1 2.1V3z" />
+                            </svg></span>
                     </div>
                 </div>
                 <div class="footer-connect">
@@ -408,7 +1905,7 @@
             } else {
                 window.localStorage.setItem(countdownStorageKey, String(countdownEndAt));
             }
-        } catch (error) {}
+        } catch (error) { }
         var countdownTimer;
         function updateCountdown() {
             var remaining = Math.max(0, countdownEndAt - Date.now());
@@ -427,4 +1924,5 @@
         updateCountdown();
     </script>
 </body>
+
 </html>
