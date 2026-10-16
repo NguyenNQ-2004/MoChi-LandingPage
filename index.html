@@ -140,11 +140,26 @@
         }
 
         .nav-brand {
-            color: #824626;
-            font-family: "Palatino Linotype", Georgia, serif;
-            font-size: 22px;
-            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
             text-decoration: none;
+            line-height: 0;
+        }
+
+        .nav-logo {
+            display: block;
+            width: 52px;
+            height: 52px;
+            border: 1px solid #f0d6e2;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(212, 66, 155, .1);
+            transition: transform .2s ease;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -1532,7 +1547,8 @@
 
 <body class="ldp-rules-v1">
     <nav class="site-nav" aria-label="Điều hướng chính">
-        <a class="nav-brand" href="#section-1" aria-label="MoChi, về đầu trang">MoChi</a>
+        <a class="nav-brand" href="#section-1" aria-label="MoChi, về đầu trang"><img class="nav-logo"
+                src="images/logo.jpg" alt="Logo MoChi Shop" width="52" height="52"></a>
         <ul class="nav-links">
             <li><a href="#section-1">Trang chủ</a></li>
             <li><a href="#section-2">Sản phẩm</a></li>
@@ -1826,7 +1842,7 @@
                 <div class="footer-brand-block">
                     <div class="footer-brand-row">
                         <a href="#section-1" aria-label="MoChi Shop"><img class="footer-logo"
-                                src="images/mochi-logo.svg" alt="Logo MoChi Shop"></a>
+                                src="images/logo.jpg" alt="Logo MoChi Shop" width="96" height="96" loading="lazy"></a>
                     </div>
                     <ul class="footer-contact">
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
